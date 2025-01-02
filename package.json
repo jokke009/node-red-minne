@@ -1,0 +1,12 @@
+{
+    "name": "Minneveldstraat",
+    "description": "house automation running on node-red hosted on x96mini",
+    "version": "0.0.1",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "flows.json",
+            "credentialsFile": "flows_cred.json"
+        }
+    }
+}
