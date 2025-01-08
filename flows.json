@@ -81,7 +81,7 @@
         "correl": "",
         "expiry": "",
         "broker": "8abff6de35e4ce34",
-        "x": 1610,
+        "x": 1630,
         "y": 100,
         "wires": []
     },
@@ -90,7 +90,7 @@
         "type": "range",
         "z": "9c9300af767b6a86",
         "minin": "0",
-        "maxin": "2500",
+        "maxin": "2.5",
         "minout": "0",
         "maxout": "100",
         "action": "scale",
