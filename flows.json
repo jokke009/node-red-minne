@@ -1,6 +1,14 @@
 [
     {
-        "id": "d4bf1c838c676070",
+        "id": "9c9300af767b6a86",
+        "type": "tab",
+        "label": "tesdter",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "707d417ea0b7b096",
         "type": "tab",
         "label": "Flow 1",
         "disabled": false,
@@ -8,48 +16,93 @@
         "env": []
     },
     {
-        "id": "77b7513f6fa228c6",
-        "type": "inject",
-        "z": "d4bf1c838c676070",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 300,
-        "y": 240,
+        "id": "8abff6de35e4ce34",
+        "type": "mqtt-broker",
+        "name": "home openwrt",
+        "broker": "172.16.1.2",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "2ff0ead1a8b7780b",
+        "type": "mqtt in",
+        "z": "9c9300af767b6a86",
+        "name": "power",
+        "topic": "home/floor0/garage/power/consumption",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "8abff6de35e4ce34",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1130,
+        "y": 100,
         "wires": [
             [
-                "354156e2fa109c20"
+                "9dd17c48085ba209"
             ]
         ]
     },
     {
-        "id": "354156e2fa109c20",
-        "type": "debug",
-        "z": "d4bf1c838c676070",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 540,
-        "y": 240,
+        "id": "40c8258b119c6cbe",
+        "type": "mqtt out",
+        "z": "9c9300af767b6a86",
+        "name": "",
+        "topic": "home/pbar/1",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8abff6de35e4ce34",
+        "x": 1610,
+        "y": 100,
         "wires": []
+    },
+    {
+        "id": "9dd17c48085ba209",
+        "type": "range",
+        "z": "9c9300af767b6a86",
+        "minin": "0",
+        "maxin": "2500",
+        "minout": "0",
+        "maxout": "100",
+        "action": "scale",
+        "round": false,
+        "property": "payload",
+        "name": "",
+        "x": 1340,
+        "y": 100,
+        "wires": [
+            [
+                "40c8258b119c6cbe"
+            ]
+        ]
     }
 ]
