@@ -47,6 +47,12 @@
         "sessionExpiry": ""
     },
     {
+        "id": "victron-client-id",
+        "type": "victron-client",
+        "showValues": true,
+        "contextStore": true
+    },
+    {
         "id": "2ff0ead1a8b7780b",
         "type": "mqtt in",
         "z": "9c9300af767b6a86",
@@ -103,6 +109,20 @@
             [
                 "40c8258b119c6cbe"
             ]
+        ]
+    },
+    {
+        "id": "eb0195fe9449411a",
+        "type": "victron-input-digitalinput",
+        "z": "707d417ea0b7b096",
+        "service": "",
+        "path": "",
+        "name": "",
+        "onlyChanges": false,
+        "x": 190,
+        "y": 300,
+        "wires": [
+            []
         ]
     }
 ]
