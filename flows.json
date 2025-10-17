@@ -347,12 +347,13 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 198,
-        "y": 265,
+        "x": 190,
+        "y": 280,
         "wires": [
             [
                 "2ad658d6b5313c72",
-                "c947ff18fdeded39"
+                "c947ff18fdeded39",
+                "f375200e8d89bd77"
             ]
         ]
     },
@@ -380,8 +381,8 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 650,
-        "y": 260,
+        "x": 890,
+        "y": 240,
         "wires": []
     },
     {
@@ -438,8 +439,35 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 440,
-        "y": 300,
+        "x": 700,
+        "y": 380,
         "wires": []
+    },
+    {
+        "id": "f375200e8d89bd77",
+        "type": "change",
+        "z": "5d4949df19142b8b",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.value",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 260,
+        "wires": [
+            [
+                "cb7860088176c7e7"
+            ]
+        ]
     }
 ]
