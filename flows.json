@@ -239,6 +239,95 @@
         "className": ""
     },
     {
+        "id": "47fea2315da3912e",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "46a95fc022dffb42",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "511c8df8572542f6",
+        "type": "ui-page",
+        "name": "Page 1",
+        "ui": "47fea2315da3912e",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "46a95fc022dffb42",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": 0,
+                "cols": 3
+            },
+            {
+                "name": "Tablet",
+                "px": 576,
+                "cols": 6
+            },
+            {
+                "name": "Small Desktop",
+                "px": 768,
+                "cols": 9
+            },
+            {
+                "name": "Desktop",
+                "px": 1024,
+                "cols": 12
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "860f3f57e71d37c5",
+        "type": "ui-group",
+        "name": "Group 1",
+        "page": "511c8df8572542f6",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": true,
+        "disabled": false,
+        "groupType": "default"
+    },
+    {
         "id": "2ff0ead1a8b7780b",
         "type": "mqtt in",
         "z": "9c9300af767b6a86",
@@ -352,7 +441,6 @@
         "wires": [
             [
                 "2ad658d6b5313c72",
-                "c947ff18fdeded39",
                 "f375200e8d89bd77"
             ]
         ]
@@ -428,22 +516,6 @@
         ]
     },
     {
-        "id": "c947ff18fdeded39",
-        "type": "debug",
-        "z": "5d4949df19142b8b",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 700,
-        "y": 380,
-        "wires": []
-    },
-    {
         "id": "f375200e8d89bd77",
         "type": "change",
         "z": "5d4949df19142b8b",
@@ -466,8 +538,57 @@
         "y": 260,
         "wires": [
             [
-                "cb7860088176c7e7"
+                "cb7860088176c7e7",
+                "b4620adc4dd4c4f8"
             ]
+        ]
+    },
+    {
+        "id": "b4620adc4dd4c4f8",
+        "type": "ui-gauge",
+        "z": "5d4949df19142b8b",
+        "name": "",
+        "group": "860f3f57e71d37c5",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "gauge",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "color": "#5CD65C",
+                "from": 0
+            },
+            {
+                "color": "#FFC800",
+                "from": 4
+            },
+            {
+                "color": "#EA5353",
+                "from": 7
+            }
+        ],
+        "min": 0,
+        "max": 10,
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 890,
+        "y": 360,
+        "wires": [
+            []
         ]
     }
 ]
