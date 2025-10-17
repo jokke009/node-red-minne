@@ -436,12 +436,13 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 190,
+        "x": 210,
         "y": 280,
         "wires": [
             [
                 "2ad658d6b5313c72",
-                "f375200e8d89bd77"
+                "f375200e8d89bd77",
+                "b4620adc4dd4c4f8"
             ]
         ]
     },
@@ -538,8 +539,7 @@
         "y": 260,
         "wires": [
             [
-                "cb7860088176c7e7",
-                "b4620adc4dd4c4f8"
+                "cb7860088176c7e7"
             ]
         ]
     },
@@ -550,7 +550,7 @@
         "name": "",
         "group": "860f3f57e71d37c5",
         "order": 1,
-        "value": "payload",
+        "value": "payload.value",
         "valueType": "msg",
         "width": 3,
         "height": 3,
@@ -565,20 +565,26 @@
         "suffix": "",
         "segments": [
             {
-                "color": "#5CD65C",
-                "from": 0
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
             },
             {
-                "color": "#FFC800",
-                "from": 4
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
             },
             {
-                "color": "#EA5353",
-                "from": 7
+                "from": "7",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
             }
         ],
-        "min": 0,
-        "max": 10,
+        "min": "10",
+        "max": "50",
         "sizeThickness": 16,
         "sizeGap": 4,
         "sizeKeyThickness": 8,
