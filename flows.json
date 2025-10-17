@@ -440,106 +440,7 @@
         "y": 280,
         "wires": [
             [
-                "2ad658d6b5313c72",
-                "f375200e8d89bd77",
                 "b4620adc4dd4c4f8"
-            ]
-        ]
-    },
-    {
-        "id": "cb7860088176c7e7",
-        "type": "ui_gauge",
-        "z": "5d4949df19142b8b",
-        "name": "",
-        "group": "1c343a84c1ed8ec9",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "gauge",
-        "label": "units",
-        "format": "{{value}}",
-        "min": "10",
-        "max": "50",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "diff": false,
-        "className": "",
-        "x": 890,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "2ad658d6b5313c72",
-        "type": "debug",
-        "z": "5d4949df19142b8b",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload.value",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 600,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "1ccee0b4c5ef583e",
-        "type": "change",
-        "z": "5d4949df19142b8b",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 520,
-        "y": 400,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "f375200e8d89bd77",
-        "type": "change",
-        "z": "5d4949df19142b8b",
-        "name": "",
-        "rules": [
-            {
-                "t": "move",
-                "p": "payload.value",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 510,
-        "y": 260,
-        "wires": [
-            [
-                "cb7860088176c7e7"
             ]
         ]
     },
@@ -547,9 +448,84 @@
         "id": "b4620adc4dd4c4f8",
         "type": "ui-gauge",
         "z": "5d4949df19142b8b",
-        "name": "",
+        "name": "MPPT Temp",
         "group": "860f3f57e71d37c5",
         "order": 1,
+        "value": "$round(payload.value, 2)",
+        "valueType": "jsonata",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "gauge",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": "10",
+        "max": "50",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 430,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c9ee185cc8b31ddb",
+        "type": "mqtt in",
+        "z": "5d4949df19142b8b",
+        "name": "Multiplus Temp",
+        "topic": "N/c0619ab784c4/temperature/21/Temperature",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "2e4fbf02d1158610",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 380,
+        "wires": [
+            [
+                "d143b822299ce264"
+            ]
+        ]
+    },
+    {
+        "id": "d143b822299ce264",
+        "type": "ui-gauge",
+        "z": "5d4949df19142b8b",
+        "name": "Multiplus Temp",
+        "group": "860f3f57e71d37c5",
+        "order": 2,
         "value": "payload.value",
         "valueType": "msg",
         "width": 3,
@@ -591,8 +567,8 @@
         "styleRounded": true,
         "styleGlow": false,
         "className": "",
-        "x": 890,
-        "y": 360,
+        "x": 440,
+        "y": 380,
         "wires": [
             []
         ]
