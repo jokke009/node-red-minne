@@ -450,7 +450,7 @@
         "z": "5d4949df19142b8b",
         "name": "MPPT Temp",
         "group": "860f3f57e71d37c5",
-        "order": 1,
+        "order": 2,
         "value": "$round(payload.value, 2)",
         "valueType": "jsonata",
         "width": 3,
@@ -525,7 +525,7 @@
         "z": "5d4949df19142b8b",
         "name": "Multiplus Temp",
         "group": "860f3f57e71d37c5",
-        "order": 2,
+        "order": 3,
         "value": "$round(payload.value, 2)",
         "valueType": "jsonata",
         "width": 3,
@@ -600,7 +600,7 @@
         "z": "5d4949df19142b8b",
         "name": "GridPower",
         "group": "860f3f57e71d37c5",
-        "order": 3,
+        "order": 4,
         "value": "$round(payload.value, 2)",
         "valueType": "jsonata",
         "width": 3,
@@ -644,6 +644,81 @@
         "className": "",
         "x": 550,
         "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3d301771c4e70c91",
+        "type": "mqtt in",
+        "z": "5d4949df19142b8b",
+        "name": "SOC",
+        "topic": "N/c0619ab784c4/battery/512/Soc",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "2e4fbf02d1158610",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 580,
+        "wires": [
+            [
+                "f86ee56450ab9136"
+            ]
+        ]
+    },
+    {
+        "id": "f86ee56450ab9136",
+        "type": "ui-gauge",
+        "z": "5d4949df19142b8b",
+        "name": "Bat Charge",
+        "group": "860f3f57e71d37c5",
+        "order": 1,
+        "value": "payload.value",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Bat Charge",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "30",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "60",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 530,
+        "y": 580,
         "wires": [
             []
         ]
