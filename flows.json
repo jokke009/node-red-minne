@@ -216,7 +216,7 @@
         "type": "mqtt out",
         "z": "707d417ea0b7b096",
         "name": "",
-        "topic": "/cerbo",
+        "topic": "",
         "qos": "",
         "retain": "",
         "respTopic": "",
