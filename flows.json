@@ -139,7 +139,8 @@
                 "default": "#0094CE",
                 "baseColor": "#0094CE",
                 "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
+                "edited": true,
+                "reset": false
             },
             "darkTheme": {
                 "default": "#097479",
@@ -368,7 +369,7 @@
         "y": 265,
         "wires": [
             [
-                "cb7860088176c7e7"
+                "71a426418c1af130"
             ]
         ]
     },
@@ -396,8 +397,41 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 530,
+        "x": 650,
         "y": 260,
+        "wires": []
+    },
+    {
+        "id": "71a426418c1af130",
+        "type": "json",
+        "z": "5d4949df19142b8b",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 390,
+        "y": 260,
+        "wires": [
+            [
+                "cb7860088176c7e7",
+                "2ad658d6b5313c72"
+            ]
+        ]
+    },
+    {
+        "id": "2ad658d6b5313c72",
+        "type": "debug",
+        "z": "5d4949df19142b8b",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 120,
         "wires": []
     }
 ]
