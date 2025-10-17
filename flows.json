@@ -751,7 +751,7 @@
                 "p": "payload"
             }
         ],
-        "repeat": "30",
+        "repeat": "60",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
