@@ -722,5 +722,48 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "2f5efe23937dbe72",
+        "type": "mqtt out",
+        "z": "5d4949df19142b8b",
+        "name": "",
+        "topic": "R/c0619ab784c4/system/0/Serial",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "2e4fbf02d1158610",
+        "x": 1000,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "0f272d6091487836",
+        "type": "inject",
+        "z": "5d4949df19142b8b",
+        "name": "keepalive",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "30",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": " ",
+        "payloadType": "str",
+        "x": 550,
+        "y": 100,
+        "wires": [
+            [
+                "2f5efe23937dbe72"
+            ]
+        ]
     }
 ]
