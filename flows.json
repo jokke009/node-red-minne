@@ -351,7 +351,7 @@
         "y": 265,
         "wires": [
             [
-                "71a426418c1af130"
+                "2ad658d6b5313c72"
             ]
         ]
     },
@@ -384,23 +384,6 @@
         "wires": []
     },
     {
-        "id": "71a426418c1af130",
-        "type": "json",
-        "z": "5d4949df19142b8b",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 390,
-        "y": 260,
-        "wires": [
-            [
-                "cb7860088176c7e7",
-                "2ad658d6b5313c72"
-            ]
-        ]
-    },
-    {
         "id": "2ad658d6b5313c72",
         "type": "debug",
         "z": "5d4949df19142b8b",
@@ -409,11 +392,37 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload.value",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
         "x": 600,
         "y": 120,
         "wires": []
+    },
+    {
+        "id": "1ccee0b4c5ef583e",
+        "type": "change",
+        "z": "5d4949df19142b8b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 400,
+        "wires": [
+            []
+        ]
     }
 ]
