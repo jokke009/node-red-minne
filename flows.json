@@ -619,7 +619,7 @@
                 "from": "-4000",
                 "color": "#5cd65c",
                 "text": "",
-                "textType": "value"
+                "textType": "label"
             },
             {
                 "from": "0",
@@ -628,7 +628,7 @@
                 "textType": "label"
             },
             {
-                "from": "4000",
+                "from": "2500",
                 "color": "#ea5353",
                 "text": "",
                 "textType": "label"
