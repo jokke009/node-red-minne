@@ -366,7 +366,7 @@
         "group": "860f3f57e71d37c5",
         "name": "spacer",
         "tooltip": "",
-        "order": 6,
+        "order": 7,
         "width": 1,
         "height": 1,
         "className": ""
@@ -1036,6 +1036,100 @@
         "className": "",
         "x": 480,
         "y": 883,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9c4202687ce360d6",
+        "type": "mqtt in",
+        "z": "5d4949df19142b8b",
+        "name": "AC IN",
+        "topic": "N/c0619ab784c4/vebus/276/Devices/0/Ac/In/P",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "2e4fbf02d1158610",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6d61639d3e898743",
+        "type": "mqtt in",
+        "z": "5d4949df19142b8b",
+        "name": "AC OUT",
+        "topic": "N/c0619ab784c4/vebus/276/Devices/0/Ac/Out/P",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "2e4fbf02d1158610",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 1060,
+        "wires": [
+            [
+                "04eaf022064e8066"
+            ]
+        ]
+    },
+    {
+        "id": "04eaf022064e8066",
+        "type": "ui-gauge",
+        "z": "5d4949df19142b8b",
+        "name": "CriticalLoad",
+        "group": "860f3f57e71d37c5",
+        "order": 6,
+        "value": "$round(payload.value, 2)",
+        "valueType": "jsonata",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "CriticalLoad",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "Watt",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "200",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "400",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": "0",
+        "max": "800",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 470,
+        "y": 1060,
         "wires": [
             []
         ]
