@@ -841,8 +841,8 @@
         "z": "5d4949df19142b8b",
         "name": "",
         "property": "payload.value",
-        "action": "",
-        "pretty": false,
+        "action": "str",
+        "pretty": true,
         "x": 370,
         "y": 860,
         "wires": [
