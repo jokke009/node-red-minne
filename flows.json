@@ -940,7 +940,7 @@
         "name": "",
         "property": "payload.value",
         "action": "",
-        "pretty": false,
+        "pretty": true,
         "x": 370,
         "y": 1040,
         "wires": [
