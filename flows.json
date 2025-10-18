@@ -811,11 +811,11 @@
         "colorTrack": "",
         "colorThumb": "",
         "showTextField": false,
-        "x": 250,
-        "y": 700,
+        "x": 110,
+        "y": 840,
         "wires": [
             [
-                "bdab6a601a8d6f80"
+                "cd40a0f4.4f5ac"
             ]
         ]
     },
@@ -959,6 +959,8 @@
         "console": false,
         "tostatus": false,
         "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
         "x": 530,
         "y": 1040,
         "wires": []
