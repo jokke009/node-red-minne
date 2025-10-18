@@ -737,7 +737,7 @@
         "correl": "",
         "expiry": "",
         "broker": "2e4fbf02d1158610",
-        "x": 1000,
+        "x": 860,
         "y": 100,
         "wires": []
     },
@@ -751,7 +751,7 @@
                 "p": "payload"
             }
         ],
-        "repeat": "60",
+        "repeat": "45",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
