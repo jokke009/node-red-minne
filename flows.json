@@ -850,5 +850,117 @@
                 "a4f0bf73153f066e"
             ]
         ]
+    },
+    {
+        "id": "634256b7.2d6818",
+        "type": "inject",
+        "z": "5d4949df19142b8b",
+        "name": "JSON String",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"a\":1}",
+        "payloadType": "str",
+        "x": 210,
+        "y": 1000,
+        "wires": [
+            [
+                "a2fe0fc8.095e1"
+            ]
+        ]
+    },
+    {
+        "id": "a2fe0fc8.095e1",
+        "type": "json",
+        "z": "5d4949df19142b8b",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 370,
+        "y": 1000,
+        "wires": [
+            [
+                "9a4ce2b8.47698"
+            ]
+        ]
+    },
+    {
+        "id": "9a4ce2b8.47698",
+        "type": "debug",
+        "z": "5d4949df19142b8b",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 530,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "80032e2.7c92cd",
+        "type": "inject",
+        "z": "5d4949df19142b8b",
+        "name": "Object",
+        "props": [
+            {
+                "p": "payload",
+                "v": "{\"a\":1}",
+                "vt": "json"
+            },
+            {
+                "p": "topic",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"a\":1}",
+        "payloadType": "json",
+        "x": 190,
+        "y": 1040,
+        "wires": [
+            [
+                "cd40a0f4.4f5ac"
+            ]
+        ]
+    },
+    {
+        "id": "cd40a0f4.4f5ac",
+        "type": "json",
+        "z": "5d4949df19142b8b",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 370,
+        "y": 1040,
+        "wires": [
+            [
+                "478b4106.4fd7c"
+            ]
+        ]
+    },
+    {
+        "id": "478b4106.4fd7c",
+        "type": "debug",
+        "z": "5d4949df19142b8b",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 530,
+        "y": 1040,
+        "wires": []
     }
 ]
