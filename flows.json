@@ -450,7 +450,7 @@
         "z": "5d4949df19142b8b",
         "name": "MPPT Temp",
         "group": "860f3f57e71d37c5",
-        "order": 4,
+        "order": 5,
         "value": "$round(payload.value, 2)",
         "valueType": "jsonata",
         "width": 3,
@@ -525,7 +525,7 @@
         "z": "5d4949df19142b8b",
         "name": "Multiplus Temp",
         "group": "860f3f57e71d37c5",
-        "order": 5,
+        "order": 6,
         "value": "$round(payload.value, 2)",
         "valueType": "jsonata",
         "width": 3,
@@ -600,7 +600,7 @@
         "z": "5d4949df19142b8b",
         "name": "GridPower",
         "group": "860f3f57e71d37c5",
-        "order": 6,
+        "order": 7,
         "value": "$round(payload.value, 2)",
         "valueType": "jsonata",
         "width": 3,
@@ -675,7 +675,7 @@
         "z": "5d4949df19142b8b",
         "name": "Bat Charge",
         "group": "860f3f57e71d37c5",
-        "order": 3,
+        "order": 4,
         "value": "payload.value",
         "valueType": "msg",
         "width": 3,
@@ -792,7 +792,7 @@
         "name": "GridSetPoint",
         "label": "GridSetPoint",
         "tooltip": "",
-        "order": 2,
+        "order": 3,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -917,6 +917,81 @@
         "className": "",
         "x": 450,
         "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4b68fee1dfe264b8",
+        "type": "mqtt in",
+        "z": "5d4949df19142b8b",
+        "name": "solar yield",
+        "topic": "N/c0619ab784c4/solarcharger/0/Yield/Power",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "2e4fbf02d1158610",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 880,
+        "wires": [
+            [
+                "9eb3b57d9e4f3d3b"
+            ]
+        ]
+    },
+    {
+        "id": "9eb3b57d9e4f3d3b",
+        "type": "ui-gauge",
+        "z": "5d4949df19142b8b",
+        "name": "solar yield",
+        "group": "860f3f57e71d37c5",
+        "order": 2,
+        "value": "payload.value",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "solar yield",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "500",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "1000",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": "0",
+        "max": "4500",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 480,
+        "y": 883,
         "wires": [
             []
         ]
