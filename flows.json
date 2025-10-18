@@ -780,8 +780,8 @@
         "correl": "",
         "expiry": "",
         "broker": "2e4fbf02d1158610",
-        "x": 650,
-        "y": 700,
+        "x": 730,
+        "y": 720,
         "wires": []
     },
     {
@@ -815,7 +815,7 @@
         "y": 700,
         "wires": [
             [
-                "a4f0bf73153f066e"
+                "bdab6a601a8d6f80"
             ]
         ]
     },
@@ -831,8 +831,24 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 480,
-        "y": 880,
+        "x": 500,
+        "y": 760,
         "wires": []
+    },
+    {
+        "id": "bdab6a601a8d6f80",
+        "type": "json",
+        "z": "5d4949df19142b8b",
+        "name": "",
+        "property": "payload.value",
+        "action": "",
+        "pretty": false,
+        "x": 370,
+        "y": 860,
+        "wires": [
+            [
+                "a4f0bf73153f066e"
+            ]
+        ]
     }
 ]
