@@ -815,7 +815,7 @@
         "y": 840,
         "wires": [
             [
-                "cd40a0f4.4f5ac"
+                "fc28be29878c5d30"
             ]
         ]
     },
@@ -831,138 +831,35 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 500,
+        "x": 600,
         "y": 760,
         "wires": []
     },
     {
-        "id": "bdab6a601a8d6f80",
-        "type": "json",
+        "id": "fc28be29878c5d30",
+        "type": "change",
         "z": "5d4949df19142b8b",
         "name": "",
-        "property": "payload.value",
-        "action": "str",
-        "pretty": false,
-        "x": 370,
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.value",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
         "y": 860,
         "wires": [
             [
                 "a4f0bf73153f066e"
             ]
         ]
-    },
-    {
-        "id": "634256b7.2d6818",
-        "type": "inject",
-        "z": "5d4949df19142b8b",
-        "name": "JSON String",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"a\":1}",
-        "payloadType": "str",
-        "x": 210,
-        "y": 1000,
-        "wires": [
-            [
-                "a2fe0fc8.095e1"
-            ]
-        ]
-    },
-    {
-        "id": "a2fe0fc8.095e1",
-        "type": "json",
-        "z": "5d4949df19142b8b",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 370,
-        "y": 1000,
-        "wires": [
-            [
-                "9a4ce2b8.47698"
-            ]
-        ]
-    },
-    {
-        "id": "9a4ce2b8.47698",
-        "type": "debug",
-        "z": "5d4949df19142b8b",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "x": 530,
-        "y": 1000,
-        "wires": []
-    },
-    {
-        "id": "80032e2.7c92cd",
-        "type": "inject",
-        "z": "5d4949df19142b8b",
-        "name": "Object",
-        "props": [
-            {
-                "p": "payload",
-                "v": "{\"a\":1}",
-                "vt": "json"
-            },
-            {
-                "p": "topic",
-                "v": "",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"a\":1}",
-        "payloadType": "json",
-        "x": 190,
-        "y": 1040,
-        "wires": [
-            [
-                "cd40a0f4.4f5ac"
-            ]
-        ]
-    },
-    {
-        "id": "cd40a0f4.4f5ac",
-        "type": "json",
-        "z": "5d4949df19142b8b",
-        "name": "",
-        "property": "payload.value",
-        "action": "",
-        "pretty": true,
-        "x": 370,
-        "y": 1040,
-        "wires": [
-            [
-                "478b4106.4fd7c"
-            ]
-        ]
-    },
-    {
-        "id": "478b4106.4fd7c",
-        "type": "debug",
-        "z": "5d4949df19142b8b",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 530,
-        "y": 1040,
-        "wires": []
     }
 ]
