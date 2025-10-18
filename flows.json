@@ -780,8 +780,8 @@
         "correl": "",
         "expiry": "",
         "broker": "2e4fbf02d1158610",
-        "x": 730,
-        "y": 720,
+        "x": 710,
+        "y": 700,
         "wires": []
     },
     {
@@ -789,8 +789,8 @@
         "type": "ui-slider",
         "z": "5d4949df19142b8b",
         "group": "860f3f57e71d37c5",
-        "name": "",
-        "label": "slider",
+        "name": "GridSetPoint",
+        "label": "GridSetPoint",
         "tooltip": "",
         "order": 1,
         "width": 0,
@@ -811,29 +811,13 @@
         "colorTrack": "",
         "colorThumb": "",
         "showTextField": false,
-        "x": 110,
-        "y": 840,
+        "x": 190,
+        "y": 700,
         "wires": [
             [
                 "fc28be29878c5d30"
             ]
         ]
-    },
-    {
-        "id": "a4f0bf73153f066e",
-        "type": "debug",
-        "z": "5d4949df19142b8b",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 560,
-        "y": 860,
-        "wires": []
     },
     {
         "id": "fc28be29878c5d30",
@@ -854,11 +838,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 330,
-        "y": 860,
+        "x": 430,
+        "y": 700,
         "wires": [
             [
-                "a4f0bf73153f066e"
+                "7f0432c9db7456b3"
             ]
         ]
     }
