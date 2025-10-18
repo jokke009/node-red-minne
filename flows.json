@@ -680,7 +680,7 @@
         "valueType": "msg",
         "width": 3,
         "height": 3,
-        "gtype": "gauge-half",
+        "gtype": "gauge-battery",
         "gstyle": "needle",
         "title": "Bat Charge",
         "alwaysShowTitle": false,
