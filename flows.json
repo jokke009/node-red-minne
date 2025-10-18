@@ -845,5 +845,80 @@
                 "7f0432c9db7456b3"
             ]
         ]
+    },
+    {
+        "id": "1f5338c5fdd121fd",
+        "type": "mqtt in",
+        "z": "5d4949df19142b8b",
+        "name": "bat charge",
+        "topic": "N/c0619ab784c4/battery/512/Dc/0/Power",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "2e4fbf02d1158610",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 800,
+        "wires": [
+            [
+                "e1f7a3341f7294b9"
+            ]
+        ]
+    },
+    {
+        "id": "e1f7a3341f7294b9",
+        "type": "ui-gauge",
+        "z": "5d4949df19142b8b",
+        "name": "bat charge",
+        "group": "860f3f57e71d37c5",
+        "order": 0,
+        "value": "payload.value",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-tile",
+        "gstyle": "needle",
+        "title": "bat charge",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "-4000",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "0",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "1000",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": "-4000",
+        "max": "4000",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 450,
+        "y": 800,
+        "wires": [
+            []
+        ]
     }
 ]
