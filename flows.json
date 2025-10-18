@@ -831,8 +831,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 600,
-        "y": 760,
+        "x": 560,
+        "y": 860,
         "wires": []
     },
     {
@@ -842,7 +842,7 @@
         "name": "",
         "rules": [
             {
-                "t": "set",
+                "t": "move",
                 "p": "payload",
                 "pt": "msg",
                 "to": "payload.value",
@@ -854,7 +854,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 320,
+        "x": 330,
         "y": 860,
         "wires": [
             [
