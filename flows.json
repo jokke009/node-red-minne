@@ -32,6 +32,110 @@
         "env": []
     },
     {
+        "id": "ef206fcd63fc785c",
+        "type": "subflow",
+        "name": "Sum inputs",
+        "info": "Subflow that can be used for totalizing\ndifferint inputs. A use case can be if\nyou want to show the total of three\ninput phases.\n\n# description\n\nA typical input is linking three phases\nof power to the input, all with its own\ntopic.\n\nThe inputs are cached, based on `msg.topic`\nand are summed as output.\n\n# configuration\n\nThe output _rate_ defaults to once per 5\nseconds, but that can be changed in the _edit\npanel_. Note that you cannot output faster\nthan the inputs get injected.\n\nIf you check the _Show only changed values_\ncheckbox, only values that are different than\nthe previous sum will be outputted.\n\nThe _expected_ is the number of inputs with different\ntopics that need to be seen before the node starts outputting data. If set to `0`, this field is ignored\nand output is send on first input.\n\nThe _topic_ can be used to set the topic.\n\n# cache\n\nIf you want to delete a value from the\ncache, you can input a message\nwith the `msg.payload` set to `delete`\nand the `msg.topic` send to the item\nthat you want to delete.",
+        "category": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "ab00184d6b31cf39"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 600,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "9cacac0ef42a925a",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "rate",
+                "type": "num",
+                "value": "5",
+                "ui": {
+                    "icon": "font-awesome/fa-clock-o",
+                    "label": {
+                        "en-US": "Time between messages (s)"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "num"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "onlychanges",
+                "type": "bool",
+                "value": "true",
+                "ui": {
+                    "icon": "font-awesome/fa-exchange",
+                    "label": {
+                        "en-US": "Show only changed values"
+                    },
+                    "type": "checkbox"
+                }
+            },
+            {
+                "name": "topic",
+                "type": "str",
+                "value": "Sum inputs",
+                "ui": {
+                    "icon": "font-awesome/fa-file-text-o",
+                    "label": {
+                        "en-US": "Topic"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "expected",
+                "type": "num",
+                "value": "3",
+                "ui": {
+                    "icon": "font-awesome/fa-bullseye",
+                    "label": {
+                        "en-US": "Expected inputs"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "num"
+                        ]
+                    }
+                }
+            }
+        ],
+        "meta": {
+            "module": "Total (grid)",
+            "version": "0.0.2",
+            "author": "Dirk-Jan Faber <dfaber@victronenergy.com>",
+            "desc": "Totals the inputs, based on different msg.topic strings",
+            "keywords": "total, grid power",
+            "license": "MIT"
+        },
+        "color": "#f7ab3e"
+    },
+    {
         "id": "8abff6de35e4ce34",
         "type": "mqtt-broker",
         "name": "home openwrt",
@@ -378,6 +482,63 @@
         "width": 1,
         "height": 1,
         "className": ""
+    },
+    {
+        "id": "0be9428328f6ceb2",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "database",
+        "name": "",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://192.168.20.108:8086",
+        "timeout": "10",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "ab00184d6b31cf39",
+        "type": "function",
+        "z": "ef206fcd63fc785c",
+        "name": "Sum inputs on topic",
+        "func": "let stored = flow.get(node.id+'stored') || {}\nlet previousSum = flow.get(node.id+'previousSum')\n\nif (Number(msg.payload)) {\n    stored[msg.topic] = msg.payload\n} else {\n    if (msg.payload === 'delete' && stored[msg.topic]) {\n        delete stored[msg.topic]\n    }\n}\n\nflow.set(node.id+'stored', stored)\nmsg.payload = Object.keys(stored).reduce((sum, key) => sum + parseFloat(stored[key] || 0), 0);\nif (env.get('onlychanges') && ( previousSum === msg.payload )) {\n    return\n}\nflow.set(node.id+'previousSum', msg.payload)\nmsg.rate = (Number(env.get('rate')) || 5) * 1000 \n\nmsg.topic = env.get('topic')\n\nif (env.get('expected') > 0 && Object.keys(stored).length < env.get('expected')) {\n    return\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 210,
+        "y": 80,
+        "wires": [
+            [
+                "9cacac0ef42a925a"
+            ]
+        ]
+    },
+    {
+        "id": "9cacac0ef42a925a",
+        "type": "delay",
+        "z": "ef206fcd63fc785c",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "5",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": true,
+        "outputs": 1,
+        "x": 460,
+        "y": 80,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "2ff0ead1a8b7780b",
@@ -1175,15 +1336,25 @@
                 "t": "lt",
                 "v": "-1000",
                 "vt": "str"
+            },
+            {
+                "t": "gte",
+                "v": "500",
+                "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 1,
+        "outputs": 2,
         "x": 350,
         "y": 220,
         "wires": [
-            []
+            [
+                "a49e3954b5186e6d"
+            ],
+            [
+                "34e482703c04df6b"
+            ]
         ]
     },
     {
@@ -1198,8 +1369,62 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 660,
+        "x": 820,
         "y": 220,
         "wires": []
+    },
+    {
+        "id": "a49e3954b5186e6d",
+        "type": "change",
+        "z": "9464b3944e40251f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "DRAINFAST",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 200,
+        "wires": [
+            [
+                "bf235d72211f4058"
+            ]
+        ]
+    },
+    {
+        "id": "34e482703c04df6b",
+        "type": "change",
+        "z": "9464b3944e40251f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "CHARGE",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 260,
+        "wires": [
+            [
+                "bf235d72211f4058"
+            ]
+        ]
     }
 ]
