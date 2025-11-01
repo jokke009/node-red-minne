@@ -478,7 +478,7 @@
         "group": "860f3f57e71d37c5",
         "name": "spacer",
         "tooltip": "",
-        "order": 7,
+        "order": 8,
         "width": 1,
         "height": 1,
         "className": ""
@@ -798,7 +798,7 @@
         "z": "5d4949df19142b8b",
         "name": "GridPower",
         "group": "860f3f57e71d37c5",
-        "order": 5,
+        "order": 6,
         "value": "$round(payload.value, 2)",
         "valueType": "jsonata",
         "width": 3,
@@ -873,7 +873,7 @@
         "z": "5d4949df19142b8b",
         "name": "Bat Charge",
         "group": "860f3f57e71d37c5",
-        "order": 4,
+        "order": 5,
         "value": "payload.value",
         "valueType": "msg",
         "width": 3,
@@ -935,8 +935,8 @@
         "correl": "",
         "expiry": "",
         "broker": "2e4fbf02d1158610",
-        "x": 860,
-        "y": 100,
+        "x": 540,
+        "y": 200,
         "wires": []
     },
     {
@@ -956,8 +956,8 @@
         "topic": "",
         "payload": " ",
         "payloadType": "str",
-        "x": 550,
-        "y": 100,
+        "x": 230,
+        "y": 200,
         "wires": [
             [
                 "2f5efe23937dbe72"
@@ -990,7 +990,7 @@
         "name": "GridSetPoint",
         "label": "GridSetPoint",
         "tooltip": "",
-        "order": 3,
+        "order": 4,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -1071,7 +1071,7 @@
         "z": "5d4949df19142b8b",
         "name": "bat charge",
         "group": "860f3f57e71d37c5",
-        "order": 1,
+        "order": 2,
         "value": "payload.value",
         "valueType": "msg",
         "width": 3,
@@ -1146,7 +1146,7 @@
         "z": "5d4949df19142b8b",
         "name": "solar yield",
         "group": "860f3f57e71d37c5",
-        "order": 2,
+        "order": 3,
         "value": "$round(payload.value, 2)",
         "valueType": "jsonata",
         "width": 3,
@@ -1240,7 +1240,7 @@
         "z": "5d4949df19142b8b",
         "name": "CriticalLoad",
         "group": "860f3f57e71d37c5",
-        "order": 6,
+        "order": 7,
         "value": "$round(payload.value, 2)",
         "valueType": "jsonata",
         "width": 3,
@@ -1354,8 +1354,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 820,
-        "y": 180,
+        "x": 1100,
+        "y": 200,
         "wires": []
     },
     {
@@ -1368,8 +1368,8 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "DRAINFAST",
-                "tot": "str"
+                "to": "true",
+                "tot": "bool"
             }
         ],
         "action": "",
@@ -1381,7 +1381,8 @@
         "y": 160,
         "wires": [
             [
-                "bf235d72211f4058"
+                "bf235d72211f4058",
+                "62399647a24ff8b3"
             ]
         ]
     },
@@ -1395,8 +1396,8 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "CHARGE",
-                "tot": "str"
+                "to": "false",
+                "tot": "bool"
             }
         ],
         "action": "",
@@ -1408,8 +1409,36 @@
         "y": 220,
         "wires": [
             [
-                "bf235d72211f4058"
+                "bf235d72211f4058",
+                "62399647a24ff8b3"
             ]
         ]
+    },
+    {
+        "id": "62399647a24ff8b3",
+        "type": "ui-led",
+        "z": "7e785bf0887d278e",
+        "name": "DISCHARE",
+        "group": "860f3f57e71d37c5",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "states": [
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#ff0000"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showBorder": true,
+        "showGlow": true,
+        "x": 890,
+        "y": 120,
+        "wires": []
     }
 ]
