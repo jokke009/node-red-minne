@@ -24,6 +24,14 @@
         "env": []
     },
     {
+        "id": "a3d72f4897154bb3",
+        "type": "tab",
+        "label": "DarthVader",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "7e785bf0887d278e",
         "type": "tab",
         "label": "Flow 4",
@@ -1318,6 +1326,45 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "a1c634322dccaa58",
+        "type": "mqtt in",
+        "z": "a3d72f4897154bb3",
+        "name": "MilSwitch5",
+        "topic": "home/floor0/hallway/controlbox/switch/5/set",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a640655571d2ab67",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 300,
+        "y": 320,
+        "wires": [
+            [
+                "15199e3af4b05e02"
+            ]
+        ]
+    },
+    {
+        "id": "15199e3af4b05e02",
+        "type": "mqtt out",
+        "z": "a3d72f4897154bb3",
+        "name": "MilLed5",
+        "topic": "home/floor0/hallway/controlbox/switch/5",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a640655571d2ab67",
+        "x": 660,
+        "y": 320,
+        "wires": []
     },
     {
         "id": "58076681327f4fd9",
