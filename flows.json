@@ -1328,7 +1328,7 @@
         ]
     },
     {
-        "id": "a1c634322dccaa58",
+        "id": "c02baefa6ca79d4e",
         "type": "mqtt in",
         "z": "a3d72f4897154bb3",
         "name": "MilG2Switch5",
@@ -1340,16 +1340,16 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 310,
-        "y": 320,
+        "x": 850,
+        "y": 620,
         "wires": [
             [
-                "15199e3af4b05e02"
+                "38f8aea41ec8af1b"
             ]
         ]
     },
     {
-        "id": "15199e3af4b05e02",
+        "id": "38f8aea41ec8af1b",
         "type": "mqtt out",
         "z": "a3d72f4897154bb3",
         "name": "MilLed5",
@@ -1362,12 +1362,12 @@
         "correl": "",
         "expiry": "",
         "broker": "a640655571d2ab67",
-        "x": 520,
-        "y": 320,
+        "x": 1060,
+        "y": 620,
         "wires": []
     },
     {
-        "id": "b1ce67c9811be547",
+        "id": "e8aa917816f98805",
         "type": "mqtt in",
         "z": "a3d72f4897154bb3",
         "name": "MilG2Switch6",
@@ -1379,16 +1379,16 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 310,
-        "y": 400,
+        "x": 850,
+        "y": 700,
         "wires": [
             [
-                "0cb2255a3e6cd5af"
+                "de979e7dc00503c9"
             ]
         ]
     },
     {
-        "id": "0cb2255a3e6cd5af",
+        "id": "de979e7dc00503c9",
         "type": "mqtt out",
         "z": "a3d72f4897154bb3",
         "name": "MilLed6",
@@ -1401,8 +1401,437 @@
         "correl": "",
         "expiry": "",
         "broker": "a640655571d2ab67",
-        "x": 520,
-        "y": 400,
+        "x": 1060,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "39516cc059eb3c31",
+        "type": "mqtt in",
+        "z": "a3d72f4897154bb3",
+        "name": "MilG2Switch7",
+        "topic": "home/floor0/hallway/controlbox/switch/7/set",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a640655571d2ab67",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 850,
+        "y": 780,
+        "wires": [
+            [
+                "bf4a49bd30a07e3c"
+            ]
+        ]
+    },
+    {
+        "id": "bf4a49bd30a07e3c",
+        "type": "mqtt out",
+        "z": "a3d72f4897154bb3",
+        "name": "MilLed7",
+        "topic": "home/floor0/hallway/controlbox/switch/7",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a640655571d2ab67",
+        "x": 1060,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "d69532c529f5e242",
+        "type": "mqtt in",
+        "z": "a3d72f4897154bb3",
+        "name": "MilG2Switch8",
+        "topic": "home/floor0/hallway/controlbox/switch/8/set",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a640655571d2ab67",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 850,
+        "y": 860,
+        "wires": [
+            [
+                "82c0ad7b2ce91243"
+            ]
+        ]
+    },
+    {
+        "id": "82c0ad7b2ce91243",
+        "type": "mqtt out",
+        "z": "a3d72f4897154bb3",
+        "name": "MilLed8",
+        "topic": "home/floor0/hallway/controlbox/switch/8",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a640655571d2ab67",
+        "x": 1060,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "70c2d8f50e67ee05",
+        "type": "mqtt in",
+        "z": "a3d72f4897154bb3",
+        "name": "MilG2Switch1",
+        "topic": "home/floor0/hallway/controlbox/switch/1/set",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a640655571d2ab67",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 850,
+        "y": 300,
+        "wires": [
+            [
+                "dc622cb2f90d4548"
+            ]
+        ]
+    },
+    {
+        "id": "dc622cb2f90d4548",
+        "type": "mqtt out",
+        "z": "a3d72f4897154bb3",
+        "name": "MilLed1",
+        "topic": "home/floor0/hallway/controlbox/switch/1",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a640655571d2ab67",
+        "x": 1060,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "d1cda6b108135b83",
+        "type": "mqtt in",
+        "z": "a3d72f4897154bb3",
+        "name": "MilG2Switch2",
+        "topic": "home/floor0/hallway/controlbox/switch/2/set",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a640655571d2ab67",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 850,
+        "y": 380,
+        "wires": [
+            [
+                "a55d0f41aaa8a612"
+            ]
+        ]
+    },
+    {
+        "id": "a55d0f41aaa8a612",
+        "type": "mqtt out",
+        "z": "a3d72f4897154bb3",
+        "name": "MilLed2",
+        "topic": "home/floor0/hallway/controlbox/switch/2",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a640655571d2ab67",
+        "x": 1060,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "af59463e0bca2bf6",
+        "type": "mqtt in",
+        "z": "a3d72f4897154bb3",
+        "name": "MilG2Switch3",
+        "topic": "home/floor0/hallway/controlbox/switch/3/set",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a640655571d2ab67",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 850,
+        "y": 460,
+        "wires": [
+            [
+                "43d923c2716c8755"
+            ]
+        ]
+    },
+    {
+        "id": "43d923c2716c8755",
+        "type": "mqtt out",
+        "z": "a3d72f4897154bb3",
+        "name": "MilLed3",
+        "topic": "home/floor0/hallway/controlbox/switch/3",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a640655571d2ab67",
+        "x": 1060,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "4e9e5ec7ca507ef4",
+        "type": "mqtt in",
+        "z": "a3d72f4897154bb3",
+        "name": "MilG2Switch4",
+        "topic": "home/floor0/hallway/controlbox/switch/4/set",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a640655571d2ab67",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 850,
+        "y": 540,
+        "wires": [
+            [
+                "34306421a6654909"
+            ]
+        ]
+    },
+    {
+        "id": "34306421a6654909",
+        "type": "mqtt out",
+        "z": "a3d72f4897154bb3",
+        "name": "MilLed4",
+        "topic": "home/floor0/hallway/controlbox/switch/4",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a640655571d2ab67",
+        "x": 1060,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "2f61d98136dcbd19",
+        "type": "mqtt in",
+        "z": "a3d72f4897154bb3",
+        "name": "MilG2Switch9",
+        "topic": "home/floor0/hallway/controlbox/switch/9/set",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a640655571d2ab67",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 850,
+        "y": 940,
+        "wires": [
+            [
+                "b13a85c2d56ecc0c"
+            ]
+        ]
+    },
+    {
+        "id": "b13a85c2d56ecc0c",
+        "type": "mqtt out",
+        "z": "a3d72f4897154bb3",
+        "name": "MilLed9",
+        "topic": "home/floor0/hallway/controlbox/switch/9",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a640655571d2ab67",
+        "x": 1060,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "f6efc7c0e8217646",
+        "type": "mqtt in",
+        "z": "a3d72f4897154bb3",
+        "name": "MilG2Switch10",
+        "topic": "home/floor0/hallway/controlbox/switch/10/set",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a640655571d2ab67",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 850,
+        "y": 1020,
+        "wires": [
+            [
+                "e0b5da9c3f7eaeb5"
+            ]
+        ]
+    },
+    {
+        "id": "e0b5da9c3f7eaeb5",
+        "type": "mqtt out",
+        "z": "a3d72f4897154bb3",
+        "name": "MilLed10",
+        "topic": "home/floor0/hallway/controlbox/switch/10",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a640655571d2ab67",
+        "x": 1060,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "f1fd9a2ba5cb3173",
+        "type": "mqtt in",
+        "z": "a3d72f4897154bb3",
+        "name": "MilG2Switch11",
+        "topic": "home/floor0/hallway/controlbox/switch/11/set",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a640655571d2ab67",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 850,
+        "y": 1100,
+        "wires": [
+            [
+                "3c49faf2ab58c7d7"
+            ]
+        ]
+    },
+    {
+        "id": "3c49faf2ab58c7d7",
+        "type": "mqtt out",
+        "z": "a3d72f4897154bb3",
+        "name": "MilLed11",
+        "topic": "home/floor0/hallway/controlbox/switch/11",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a640655571d2ab67",
+        "x": 1060,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "e27c4154b0aead12",
+        "type": "mqtt in",
+        "z": "a3d72f4897154bb3",
+        "name": "MilG2Switch12",
+        "topic": "home/floor0/hallway/controlbox/switch/12/set",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a640655571d2ab67",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 850,
+        "y": 1180,
+        "wires": [
+            [
+                "bfc578aeb3678872"
+            ]
+        ]
+    },
+    {
+        "id": "bfc578aeb3678872",
+        "type": "mqtt out",
+        "z": "a3d72f4897154bb3",
+        "name": "MilLed12",
+        "topic": "home/floor0/hallway/controlbox/switch/12",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a640655571d2ab67",
+        "x": 1060,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "6f84f0291a4d0aa0",
+        "type": "mqtt in",
+        "z": "a3d72f4897154bb3",
+        "name": "MilG2Switch13",
+        "topic": "home/floor0/hallway/controlbox/switch/13/set",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a640655571d2ab67",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 850,
+        "y": 1260,
+        "wires": [
+            [
+                "b35a3513d170f713"
+            ]
+        ]
+    },
+    {
+        "id": "b35a3513d170f713",
+        "type": "mqtt out",
+        "z": "a3d72f4897154bb3",
+        "name": "MilLed13",
+        "topic": "home/floor0/hallway/controlbox/switch/13",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a640655571d2ab67",
+        "x": 1060,
+        "y": 1260,
         "wires": []
     },
     {
