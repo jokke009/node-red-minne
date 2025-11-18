@@ -1331,7 +1331,7 @@
         "id": "a1c634322dccaa58",
         "type": "mqtt in",
         "z": "a3d72f4897154bb3",
-        "name": "MilSwitch5",
+        "name": "MilG2Switch5",
         "topic": "home/floor0/hallway/controlbox/switch/5/set",
         "qos": "2",
         "datatype": "auto-detect",
@@ -1340,7 +1340,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 300,
+        "x": 310,
         "y": 320,
         "wires": [
             [
@@ -1362,8 +1362,47 @@
         "correl": "",
         "expiry": "",
         "broker": "a640655571d2ab67",
-        "x": 660,
+        "x": 520,
         "y": 320,
+        "wires": []
+    },
+    {
+        "id": "b1ce67c9811be547",
+        "type": "mqtt in",
+        "z": "a3d72f4897154bb3",
+        "name": "MilG2Switch6",
+        "topic": "home/floor0/hallway/controlbox/switch/6/set",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a640655571d2ab67",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 310,
+        "y": 400,
+        "wires": [
+            [
+                "0cb2255a3e6cd5af"
+            ]
+        ]
+    },
+    {
+        "id": "0cb2255a3e6cd5af",
+        "type": "mqtt out",
+        "z": "a3d72f4897154bb3",
+        "name": "MilLed6",
+        "topic": "home/floor0/hallway/controlbox/switch/6",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a640655571d2ab67",
+        "x": 520,
+        "y": 400,
         "wires": []
     },
     {
